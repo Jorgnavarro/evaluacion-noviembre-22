@@ -6,12 +6,23 @@ import React from 'react'
 // MÉTODOS: App debe tener un método para aumentar este número y que pueda ser ejecutado por su nieto Post.
 // PROPS: App deberá pasar por props lo necesario a sus componenetes internos para que manipulen o lean su estado.
 
+import {Estatus}from "./components/Estatus"
+import {Posteos} from "./components/Posteos"
+
 function App() {
+
+  const [estatus, setEstatus] = React.useState(0);
+
+  const [postlike, SetPostLike] = React.useState(0);
+
+  function likesTotales(){
+    setEstatus((likes) => likes + 1)
+  }
 
   return (
     <div className="App">
-      <Estatus />
-      <Posteos />
+      <Estatus estatus ={estatus} />
+      <Posteos likesTotales ={likesTotales}/>
     </div>
   );
 }

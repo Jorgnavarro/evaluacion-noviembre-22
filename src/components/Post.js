@@ -12,11 +12,22 @@ import React from 'react'
 //    button       (este boton debe permitir sumar likes)
 //    h5    (este h5 debe mostrar la cantidad de likes, pero si la misma es mayor a 10 debe decir "Más de 10 likes")
 
-export default function Post() {
+export default function Post(props) {
+
+  const[likePost, setLikePost] = React.useState(0)
+
+  function handleSelectPost(){
+    setLikePost((likes) => likes + 1)
+    props.likesTotales()
+  }
+
 
   return (
     <div className='posteo'>
-      {/* maquetar Post aquí */}
+      <h3>{props.post.titulo}</h3>
+      <p>{props.post.texto}</p>
+      <button onClick={handleSelectPost}></button>
+      <h5>Likes{likePost}</h5>
     </div>
   )
 }
