@@ -26,7 +26,7 @@ export default function Post(props) {
     <div className='posteo'>
       <h3>{props.post.titulo}</h3>
       <p>{props.post.texto}</p>
-      <button onClick={handleSelectPost}></button>
+      <button onClick={handleSelectPost}>👍</button>
       <h5>Likes{likePost}</h5>
     </div>
   )

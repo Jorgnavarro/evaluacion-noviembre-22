@@ -13,8 +13,6 @@ function App() {
 
   const [estatus, setEstatus] = React.useState(0);
 
-  const [postlike, SetPostLike] = React.useState(0);
-
   function likesTotales(){
     setEstatus((likes) => likes + 1)
   }
