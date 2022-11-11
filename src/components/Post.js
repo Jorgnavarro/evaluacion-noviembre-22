@@ -27,7 +27,7 @@ export default function Post(props) {
       <h3>{props.post.titulo}</h3>
       <p>{props.post.texto}</p>
       <button onClick={handleSelectPost}>👍</button>
-      <h5>Likes{likePost}</h5>
+      <h5 >{likePost<=10? <h5>{likePost}</h5>:(<h5>Más de 10 likes</h5>)}</h5>
     </div>
   )
 }
